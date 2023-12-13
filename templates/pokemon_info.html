@@ -1,0 +1,35 @@
+<!-- tu_app/templates/pokemon_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pokemon_data.name }}</title>
+</head>
+<body>
+    <h1>{{ pokemon_data.name }}</h1>
+    <p>ID: {{ pokemon_data.id }}</p>
+    <p>Altura: {{ pokemon_data.height }}</p>
+    <p>Peso: {{ pokemon_data.weight }}</p>
+
+    <h2>Tipos:</h2>
+    <ul>
+        {% for pokemon_type in pokemon_data.types %}
+            <li>{{ pokemon_type.type.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Habilidades:</h2>
+    <ul>
+        {% for ability in pokemon_data.abilities %}
+            <li>{{ ability.ability.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Imagen:</h2>
+    <img src="{{ image_url }}" alt="{{ pokemon_data.name }}">
+
+    <!-- Puedes agregar más detalles según sea necesario -->
+
+</body>
+</html>
